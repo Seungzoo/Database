@@ -23,18 +23,18 @@ DROP TABLE IF EXISTS `board`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `board` (
-  `bno` int NOT NULL AUTO_INCREMENT,
-  `bid` varchar(12) NOT NULL,
-  `btitle` varchar(45) NOT NULL,
-  `bcontent` varchar(100) NOT NULL,
-  `btime` datetime NOT NULL,
-  `bcount` int NOT NULL DEFAULT '0',
+  `bNo` int NOT NULL AUTO_INCREMENT,
+  `bId` varchar(20) NOT NULL,
+  `bTitle` varchar(45) NOT NULL,
+  `bContent` varchar(100) NOT NULL,
+  `bTime` datetime NOT NULL,
+  `bCount` int NOT NULL DEFAULT '0',
   `extra` varchar(45) DEFAULT NULL,
   `extra2` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`bno`),
-  KEY `bno_idx` (`bno`),
-  KEY `id_idx` (`bid`),
-  CONSTRAINT `bid` FOREIGN KEY (`bid`) REFERENCES `member` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  PRIMARY KEY (`bNo`),
+  KEY `bno_idx` (`bNo`),
+  KEY `boardid_idx` (`bId`),
+  CONSTRAINT `boardid` FOREIGN KEY (`bId`) REFERENCES `member` (`nickname`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -56,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-10-26 11:37:35
+-- Dump completed on 2022-11-03 10:18:04

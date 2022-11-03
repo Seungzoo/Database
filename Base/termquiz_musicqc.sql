@@ -23,18 +23,18 @@ DROP TABLE IF EXISTS `musicqc`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `musicqc` (
-  `cno` int NOT NULL AUTO_INCREMENT,
-  `qno` int NOT NULL,
-  `mid` varchar(12) NOT NULL,
-  `qcomment` varchar(100) NOT NULL,
-  `qcommenttime` datetime NOT NULL,
+  `musicqcNo` int NOT NULL AUTO_INCREMENT,
+  `musicqNo` int NOT NULL,
+  `musicqcId` varchar(20) NOT NULL,
+  `musicqComment` varchar(100) NOT NULL,
+  `musicqcTime` datetime NOT NULL,
   `extra` varchar(45) DEFAULT NULL,
   `extra2` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`cno`),
-  KEY `musicqno_idx` (`qno`),
-  KEY `musicqcid_idx` (`mid`),
-  CONSTRAINT `musicqcid` FOREIGN KEY (`mid`) REFERENCES `member` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `musicqno` FOREIGN KEY (`qno`) REFERENCES `musicq` (`musicqno`) ON DELETE CASCADE ON UPDATE CASCADE
+  PRIMARY KEY (`musicqcNo`),
+  KEY `musicqno_idx` (`musicqNo`),
+  KEY `musicqcid_idx` (`musicqcId`),
+  CONSTRAINT `musicqcid` FOREIGN KEY (`musicqcId`) REFERENCES `member` (`nickname`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `musicqno` FOREIGN KEY (`musicqNo`) REFERENCES `musicq` (`musicqNo`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -56,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-10-26 11:37:35
+-- Dump completed on 2022-11-03 10:18:03

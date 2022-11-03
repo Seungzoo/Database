@@ -23,15 +23,17 @@ DROP TABLE IF EXISTS `movieq`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `movieq` (
-  `movieqno` int NOT NULL AUTO_INCREMENT,
-  `movieqtitle` varchar(45) NOT NULL,
-  `movieqanswer` varchar(45) NOT NULL,
-  `movieqhint1` varchar(45) NOT NULL,
-  `movieqhint2` varchar(45) NOT NULL,
-  `movieqhint3` varchar(45) NOT NULL,
-  `movieqhint4` varchar(45) NOT NULL,
-  `movieqhint5` varchar(45) NOT NULL,
-  PRIMARY KEY (`movieqno`)
+  `movieqNo` int NOT NULL AUTO_INCREMENT,
+  `movieqTitle` varchar(45) NOT NULL,
+  `movieqAnswer` varchar(45) NOT NULL,
+  `movieqHint1` varchar(45) NOT NULL,
+  `movieqHint2` varchar(45) NOT NULL,
+  `movieqHint3` varchar(45) NOT NULL,
+  `movieqHint4` varchar(45) NOT NULL,
+  `movieqHint5` varchar(45) NOT NULL,
+  `extra` varchar(45) DEFAULT NULL,
+  `extra2` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`movieqNo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -53,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-10-26 11:37:35
+-- Dump completed on 2022-11-03 10:18:03

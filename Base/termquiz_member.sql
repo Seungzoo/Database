@@ -23,17 +23,21 @@ DROP TABLE IF EXISTS `member`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `member` (
-  `id` varchar(12) NOT NULL,
-  `password` varchar(20) NOT NULL,
-  `name` varchar(10) NOT NULL,
-  `birthday` date NOT NULL,
-  `gender` varchar(10) NOT NULL,
-  `email` varchar(45) NOT NULL,
-  `pnumber` varchar(20) NOT NULL,
-  `totalscore` int NOT NULL DEFAULT '0',
+  `email` varchar(40) NOT NULL,
+  `nickname` varchar(20) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `name` varchar(20) NOT NULL,
+  `phoneNumber` int NOT NULL,
+  `scNumF` int NOT NULL,
+  `scNumL` int NOT NULL,
+  `totalScore` int NOT NULL DEFAULT '0',
+  `movieScore` int NOT NULL DEFAULT '0',
+  `musicSocore` int NOT NULL DEFAULT '0',
+  `adminRight` tinyint NOT NULL DEFAULT '0',
   `extra` varchar(45) DEFAULT NULL,
   `extra2` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`email`),
+  UNIQUE KEY `nickname_UNIQUE` (`nickname`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -43,6 +47,7 @@ CREATE TABLE `member` (
 
 LOCK TABLES `member` WRITE;
 /*!40000 ALTER TABLE `member` DISABLE KEYS */;
+INSERT INTO `member` VALUES ('elderday9572@naver.com','laverasdas','$2a$10$AEgR4hM0UsKIwv9dRcnbzO79AG.r77JeN3jOaJisS9FazUxLGrjoq','navasg',1000000000,950702,1,0,0,0,0,NULL,NULL);
 /*!40000 ALTER TABLE `member` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +60,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-10-26 11:37:34
+-- Dump completed on 2022-11-03 10:18:04

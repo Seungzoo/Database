@@ -23,17 +23,17 @@ DROP TABLE IF EXISTS `qna`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `qna` (
-  `qno` int NOT NULL AUTO_INCREMENT,
-  `qid` varchar(12) NOT NULL,
-  `qnatitle` varchar(45) NOT NULL,
-  `qnacontent` varchar(45) NOT NULL,
-  `qnaanswer` varchar(45) DEFAULT NULL,
-  `qnatime` date NOT NULL,
+  `qnaNo` int NOT NULL AUTO_INCREMENT,
+  `qnaId` varchar(20) NOT NULL,
+  `qnaTitle` varchar(45) NOT NULL,
+  `qnaContent` varchar(45) NOT NULL,
+  `qnaAnswer` varchar(45) DEFAULT NULL,
+  `qnaTime` date NOT NULL,
   `extra` varchar(45) DEFAULT NULL,
   `extra2` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`qno`),
-  KEY `id_idx` (`qid`),
-  CONSTRAINT `qid` FOREIGN KEY (`qid`) REFERENCES `member` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  PRIMARY KEY (`qnaNo`),
+  KEY `qnaid_idx` (`qnaId`),
+  CONSTRAINT `qnaid` FOREIGN KEY (`qnaId`) REFERENCES `member` (`nickname`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -55,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-10-26 11:37:35
+-- Dump completed on 2022-11-03 10:18:03
